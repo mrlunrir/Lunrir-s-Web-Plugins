@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Lightbox Gallery</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    #gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    #gallery a img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    #gallery a:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Lightbox Gallery</h1>
+
+  <div id="gallery" class="lightgallery">
+    <a href="https://picsum.photos/800/600?random=1">
+      <img src="https://picsum.photos/200/150?random=1" alt="Random Image 1">
+    </a>
+    <a href="https://picsum.photos/800/600?random=2">
+      <img src="https://picsum.photos/200/150?random=2" alt="Random Image 2">
+    </a>
+    <a href="https://picsum.photos/800/600?random=3">
+      <img src="https://picsum.photos/200/150?random=3" alt="Random Image 3">
+    </a>
+    <a href="https://picsum.photos/800/600?random=4">
+      <img src="https://picsum.photos/200/150?random=4" alt="Random Image 4">
+    </a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.umd.min.js"></script>
+  <script>
+    lightGallery(document.querySelector("#gallery"), {
+      plugins: [lgZoom],
+      speed: 500,
+    });
+  </script>
+
+</body>
+</html>
